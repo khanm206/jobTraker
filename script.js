@@ -121,15 +121,22 @@ function allJobs(jobs) {
   totalJobs.innerHTML = ``;
   for (const job of jobs) {
     const div = document.createElement(`div`);
-    div.classList.add("card", "space-y-4", "bg-base-100", "p-8", "rounded-2xl");
+    div.classList.add(
+      "card",
+      "space-y-4",
+      "bg-base-100",
+      "p-4",
+      "lg:p-8",
+      "rounded-2xl",
+    );
     div.innerHTML = `
-   <div class="flex justify-between items-start">
+   <div class="lg:flex justify-between items-start">
   <div class="space-y-6">
     <div>
       <h2 class="company text-2xl font-semibold">${job.company}</h2>
       <p class="role text-lg text-neutral/70">${job.role}</p>
     </div>
-    <div class="flex items-center gap-2 text-neutral/70">
+    <div class="lg:flex items-center gap-2 text-neutral/70">
       <p class="location">${job.location}</p>
       <i class="fa-solid fa-circle"></i>
       <p class="type">${job.type}</p>
@@ -143,7 +150,7 @@ function allJobs(jobs) {
       <button class="rejected-btn btn btn-outline btn-error">REJECTED</button>
     </div>
   </div>
-
+<br class="lg:hidden">
   <button class="del btn border border-neutral/20 p-2 rounded-full">
  <i class="del fa-solid fa-trash-can"></i>
   </button>
@@ -233,7 +240,6 @@ document.querySelector(`main`).addEventListener(`click`, function (event) {
       (item) => item.company != cardInfo.company,
     );
     countJobs();
-
     selectedJob(`interview`, interviewList);
     selectedJob(`rejected`, rejectedList);
   }

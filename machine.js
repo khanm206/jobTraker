@@ -35,7 +35,7 @@ function selectedJob(id, jobs) {
         "rounded-2xl",
       );
       div.innerHTML = `
-<div class="flex justify-between items-start">
+<div class="lg:flex justify-between items-start">
 
 
    <div class="space-y-6">
@@ -45,7 +45,7 @@ function selectedJob(id, jobs) {
                     <h2 class="company text-2xl font-semibold">${job.company}</h2>
                     <p class="role text-lg text-neutral/70">${job.role}</p>
                 </div>
-                <div class="flex items-center gap-2 text-neutral/70">
+                <div class="lg:flex items-center gap-2 text-neutral/70">
                     <p class="location">${job.location}</p>
                     <i class="fa-solid fa-circle"></i>
                     <p class="type">${job.type}</p>
@@ -61,7 +61,7 @@ function selectedJob(id, jobs) {
 
    
    </div>
-
+<br class="hidden">
  <button class="del btn border border-neutral/20 p-2 rounded-full">
  <i class="del fa-solid fa-trash-can"></i>
   </button>
@@ -89,7 +89,7 @@ function selectedJob(id, jobs) {
         "rounded-2xl",
       );
       div.innerHTML = `
-<div class="flex justify-between items-start">
+<div class="lg:flex justify-between items-start">
 
 
    <div class="space-y-6">
@@ -99,7 +99,7 @@ function selectedJob(id, jobs) {
                     <h2 class="company text-2xl font-semibold">${job.company}</h2>
                     <p class="role text-lg text-neutral/70">${job.role}</p>
                 </div>
-                <div class="flex items-center gap-2 text-neutral/70">
+                <div class="lg:flex items-center gap-2 text-neutral/70">
                     <p class="location">${job.location}</p>
                     <i class="fa-solid fa-circle"></i>
                     <p class="type">${job.type}</p>
@@ -115,7 +115,7 @@ function selectedJob(id, jobs) {
 
    
    </div>
-
+<br class+"hidden">
  <button class="del btn border border-neutral/20 p-2 rounded-full">
  <i class="del fa-solid fa-trash-can"></i>
   </button>
