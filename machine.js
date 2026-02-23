@@ -57,7 +57,7 @@ function selectedJob(id, jobs) {
    </div>
 
  <button class="del btn border border-neutral/20 p-2 rounded-full">
- <i class="fa-solid fa-trash-can"></i>
+ <i class="del fa-solid fa-trash-can"></i>
   </button>
 </div>
     `;
@@ -74,6 +74,12 @@ function selectedJob(id, jobs) {
         "rounded-2xl",
       );
       div.innerHTML = `
+<div class="flex justify-between items-start">
+
+
+   <div class="space-y-6">
+   
+   
     <div>
                     <h2 class="company text-2xl font-semibold">${job.company}</h2>
                     <p class="role text-lg text-neutral/70">${job.role}</p>
@@ -85,12 +91,20 @@ function selectedJob(id, jobs) {
                     <i class="fa-solid fa-circle"></i>
                     <p class="salary">${job.salary}</p>
                 </div>
-                <div class="sta w-fit px-4 py-2 rounded-lg text-lg font-semiboldt bg-error/20 text-error border border-error ">REJECTED</div>
+                <div class="stat w-fit px-4 py-2 rounded-lg text-lg font-semiboldt bg-error/20 text-error border border-error ">REJECTED</div>
                 <p class="description">${job.description}</p>
                 <div class="space-x-2 text-xl">
                     <button class="interview-btn btn btn-outline btn-success">INTERVIEW</button>
                     <button class="rejected-btn btn btn-outline btn-error">REJECTED</button>
                 </div>
+
+   
+   </div>
+
+ <button class="del btn border border-neutral/20 p-2 rounded-full">
+ <i class="del fa-solid fa-trash-can"></i>
+  </button>
+</div>
     `;
       totalJobs.appendChild(div);
     }

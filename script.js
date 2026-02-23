@@ -145,7 +145,7 @@ function allJobs(jobs) {
   </div>
 
   <button class="del btn border border-neutral/20 p-2 rounded-full">
- <i class="fa-solid fa-trash-can"></i>
+ <i class="del fa-solid fa-trash-can"></i>
   </button>
 </div>  
     `;
@@ -176,10 +176,16 @@ document.querySelector(`main`).addEventListener(`click`, function (event) {
     description,
   };
 
-  const stat = parent.children[2];
   //   Interview button
   if (event.target.classList.contains(`interview-btn`)) {
+    let stat = parent.querySelector(`.stat`);
     stat.innerText = `INTERVIEW`;
+    stat.classList.remove(
+      `bg-error/20`,
+      `text-error`,
+      `border`,
+      `border-error`,
+    );
     stat.classList.add(
       `bg-success/20`,
       `text-success`,
@@ -203,7 +209,14 @@ document.querySelector(`main`).addEventListener(`click`, function (event) {
 
   // Rejected button
   else if (event.target.classList.contains(`rejected-btn`)) {
+    let stat = parent.querySelector(`.stat`);
     stat.innerText = `REJECTED`;
+    stat.classList.remove(
+      `bg-success/20`,
+      `text-success`,
+      `border`,
+      `border-success`,
+    );
     stat.classList.add(`bg-error/20`, `text-error`, `border`, `border-error`);
     const duplicate = rejectedList.find(
       (item) => item.company == cardInfo.company,
@@ -217,7 +230,10 @@ document.querySelector(`main`).addEventListener(`click`, function (event) {
     countJobs();
     selectedJob(`rejected`, rejectedList);
     selectedJob(`interview`, interviewList);
-  } else if (event.target.classList.contains(`del`)) {
+  }
+
+  //   Delete button
+  else if (event.target.classList.contains(`del`)) {
     totalList = totalList.filter((item) => item.company != cardInfo.company);
     console.log(totalList);
     interviewList = interviewList.filter(
