@@ -1,0 +1,98 @@
+function showSec(id, btn) {
+  const sections = document.getElementsByTagName(`section`);
+  for (const sec of sections) {
+    sec.classList.add(`hidden`);
+  }
+
+  const buttons = document.getElementsByClassName(`opt-btn`);
+  for (const btn of buttons) {
+    btn.classList.remove(`bg-info`, `text-white`);
+  }
+  btn.classList.add(`bg-info`, `text-white`);
+  document.getElementById(id).classList.remove(`hidden`);
+}
+
+function selectedJob(id, jobs) {
+  const totalJobs = document.getElementById(id);
+  totalJobs.innerHTML = ``;
+
+  if (id === `interview`) {
+    const stats = document.getElementsByClassName(`stat`);
+
+    for (const job of jobs) {
+      const div = document.createElement(`div`);
+      div.classList.add(
+        "card",
+        "space-y-4",
+        "bg-base-100",
+        "p-8",
+        "rounded-2xl",
+      );
+      div.innerHTML = `
+<div class="flex justify-between items-start">
+
+
+   <div class="space-y-6">
+   
+   
+    <div>
+                    <h2 class="company text-2xl font-semibold">${job.company}</h2>
+                    <p class="role text-lg text-neutral/70">${job.role}</p>
+                </div>
+                <div class="flex items-center gap-2 text-neutral/70">
+                    <p class="location">${job.location}</p>
+                    <i class="fa-solid fa-circle"></i>
+                    <p class="type">${job.type}</p>
+                    <i class="fa-solid fa-circle"></i>
+                    <p class="salary">${job.salary}</p>
+                </div>
+                <div class="stat w-fit px-4 py-2 rounded-lg text-lg font-semibold bg-success/20 text-success border border-success">INTERVIEW</div>
+                <p class="description">${job.description}</p>
+                <div class="space-x-2 text-xl">
+                    <button class="interview-btn btn btn-outline btn-success">INTERVIEW</button>
+                    <button class="rejected-btn btn btn-outline btn-error">REJECTED</button>
+                </div>
+
+   
+   </div>
+
+ <button class="del btn border border-neutral/20 p-2 rounded-full">
+ <i class="fa-solid fa-trash-can"></i>
+  </button>
+</div>
+    `;
+      totalJobs.appendChild(div);
+    }
+  } else {
+    for (const job of jobs) {
+      const div = document.createElement(`div`);
+      div.classList.add(
+        "card",
+        "space-y-4",
+        "bg-base-100",
+        "p-8",
+        "rounded-2xl",
+      );
+      div.innerHTML = `
+    <div>
+                    <h2 class="company text-2xl font-semibold">${job.company}</h2>
+                    <p class="role text-lg text-neutral/70">${job.role}</p>
+                </div>
+                <div class="flex items-center gap-2 text-neutral/70">
+                    <p class="location">${job.location}</p>
+                    <i class="fa-solid fa-circle"></i>
+                    <p class="type">${job.type}</p>
+                    <i class="fa-solid fa-circle"></i>
+                    <p class="salary">${job.salary}</p>
+                </div>
+                <div class="sta w-fit px-4 py-2 rounded-lg text-lg font-semiboldt bg-error/20 text-error border border-error ">REJECTED</div>
+                <p class="description">${job.description}</p>
+                <div class="space-x-2 text-xl">
+                    <button class="interview-btn btn btn-outline btn-success">INTERVIEW</button>
+                    <button class="rejected-btn btn btn-outline btn-error">REJECTED</button>
+                </div>
+    `;
+      totalJobs.appendChild(div);
+    }
+  }
+}
