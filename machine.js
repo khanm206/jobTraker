@@ -14,11 +14,17 @@ function showSec(id, btn) {
 
 function selectedJob(id, jobs) {
   const totalJobs = document.getElementById(id);
-  totalJobs.innerHTML = ``;
 
   if (id === `interview`) {
-    const stats = document.getElementsByClassName(`stat`);
-
+    if (jobs.length === 0) {
+      totalJobs.innerHTML = `     <div class="bg-base-100 py-20 text-center rounded-lg">
+                <img class="mx-auto" src="./jobs.png" alt="image">
+                <h2 class="text-3xl font-semibold">No jobs available</h2>
+                <p class="text-lg text-neutral/60">Check back soon for new job opportunities</p>
+            </div>`;
+      return;
+    }
+    totalJobs.innerHTML = ``;
     for (const job of jobs) {
       const div = document.createElement(`div`);
       div.classList.add(
@@ -63,7 +69,16 @@ function selectedJob(id, jobs) {
     `;
       totalJobs.appendChild(div);
     }
-  } else {
+  } else if (id === `rejected`) {
+    if (jobs.length === 0) {
+      totalJobs.innerHTML = `     <div class="bg-base-100 py-20 text-center rounded-lg">
+                <img class="mx-auto" src="./jobs.png" alt="image">
+                <h2 class="text-3xl font-semibold">No jobs available</h2>
+                <p class="text-lg text-neutral/60">Check back soon for new job opportunities</p>
+            </div>`;
+      return;
+    }
+    totalJobs.innerHTML = ``;
     for (const job of jobs) {
       const div = document.createElement(`div`);
       div.classList.add(

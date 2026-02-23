@@ -192,6 +192,8 @@ document.querySelector(`main`).addEventListener(`click`, function (event) {
       `border`,
       `border-success`,
     );
+    parent.parentNode.parentNode.classList.remove(`border-error`);
+    parent.parentNode.parentNode.classList.add(`border-l-4`, `border-success`);
 
     const duplicate = interviewList.find(
       (item) => item.company == cardInfo.company,
@@ -203,6 +205,7 @@ document.querySelector(`main`).addEventListener(`click`, function (event) {
       (item) => item.company != cardInfo.company,
     );
     countJobs();
+
     selectedJob(`rejected`, rejectedList);
     selectedJob(`interview`, interviewList);
   }
@@ -218,6 +221,8 @@ document.querySelector(`main`).addEventListener(`click`, function (event) {
       `border-success`,
     );
     stat.classList.add(`bg-error/20`, `text-error`, `border`, `border-error`);
+    parent.parentNode.parentNode.classList.remove(`border-success`);
+    parent.parentNode.parentNode.classList.add(`border-l-4`, `border-error`);
     const duplicate = rejectedList.find(
       (item) => item.company == cardInfo.company,
     );
@@ -228,14 +233,14 @@ document.querySelector(`main`).addEventListener(`click`, function (event) {
       (item) => item.company != cardInfo.company,
     );
     countJobs();
-    selectedJob(`rejected`, rejectedList);
+
     selectedJob(`interview`, interviewList);
+    selectedJob(`rejected`, rejectedList);
   }
 
   //   Delete button
   else if (event.target.classList.contains(`del`)) {
     totalList = totalList.filter((item) => item.company != cardInfo.company);
-    console.log(totalList);
     interviewList = interviewList.filter(
       (item) => item.company != cardInfo.company,
     );
