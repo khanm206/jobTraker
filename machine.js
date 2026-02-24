@@ -61,7 +61,7 @@ function selectedJob(id, jobs) {
 
    
    </div>
-<br class="hidden">
+<br class="lg:hidden">
  <button class="del btn border border-neutral/20 p-2 rounded-full">
  <i class="del fa-solid fa-trash-can"></i>
   </button>
@@ -115,7 +115,7 @@ function selectedJob(id, jobs) {
 
    
    </div>
-<br class="hidden">
+<br class="lg:hidden">
  <button class="del btn border border-neutral/20 p-2 rounded-full">
  <i class="del fa-solid fa-trash-can"></i>
   </button>
