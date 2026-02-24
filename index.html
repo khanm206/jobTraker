@@ -24,7 +24,7 @@
     </style>
 </head>
 
-<body class="max-w-[1600px] mx-auto py-10 bg-[#F8FAFC] h-dvh">
+<body id="body" class="max-w-[1600px] mx-auto py-10 bg-[#F8FAFC]">
     <header class="w-11/12 mx-auto space-y-8 border-b border-neutral/30 pb-8">
         <h1 class="text-4xl">Job Application Tracker</h1>
         <div class="grid grid-cols-3 gap-4">
@@ -60,7 +60,7 @@
             <!-- js-line-114 -->
         </section>
 
-        <section id="interview" class="space-y-6 hidden">
+        <section id="interview" class="space-y-6 hidden h-full">
 
             <div class="bg-base-100 py-20 text-center rounded-lg">
                 <img class="mx-auto" src="./jobs.png" alt="image">
@@ -70,7 +70,7 @@
             <!-- js-line-167 -->
         </section>
 
-        <section id="rejected" class="space-y-6 hidden">
+        <section id="rejected" class="space-y-6 hidden h-full">
             <div class="bg-base-100 py-20 text-center rounded-lg">
                 <img class="mx-auto" src="./jobs.png" alt="image">
                 <h2 class="text-3xl font-semibold">No jobs available</h2>
@@ -78,6 +78,7 @@
             </div>
             <!-- js-line-183 -->
         </section>
+        <br>
     </main>
 
     <script src="./machine.js"></script>

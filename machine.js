@@ -17,7 +17,7 @@ function selectedJob(id, jobs) {
 
   if (id === `interview`) {
     if (jobs.length === 0) {
-      totalJobs.innerHTML = `     <div class="bg-base-100 py-20 text-center rounded-lg">
+      totalJobs.innerHTML = `<div class="bg-base-100 py-20 text-center rounded-lg">
                 <img class="mx-auto" src="./jobs.png" alt="image">
                 <h2 class="text-3xl font-semibold">No jobs available</h2>
                 <p class="text-lg text-neutral/60">Check back soon for new job opportunities</p>
@@ -71,7 +71,7 @@ function selectedJob(id, jobs) {
     }
   } else if (id === `rejected`) {
     if (jobs.length === 0) {
-      totalJobs.innerHTML = `     <div class="bg-base-100 py-20 text-center rounded-lg">
+      totalJobs.innerHTML = `<div class="bg-base-100 py-20 text-center rounded-lg">
                 <img class="mx-auto" src="./jobs.png" alt="image">
                 <h2 class="text-3xl font-semibold">No jobs available</h2>
                 <p class="text-lg text-neutral/60">Check back soon for new job opportunities</p>
@@ -106,7 +106,7 @@ function selectedJob(id, jobs) {
                     <i class="fa-solid fa-circle"></i>
                     <p class="salary">${job.salary}</p>
                 </div>
-                <div class="stat w-fit px-4 py-2 rounded-lg text-lg font-semiboldt bg-error/20 text-error border border-error ">REJECTED</div>
+                <div class="stat w-fit px-4 py-2 rounded-lg text-lg font-semibold  bg-error/20 text-error border border-error ">REJECTED</div>
                 <p class="description">${job.description}</p>
                 <div class="space-x-2 text-xl">
                     <button onclick="changeStatusOnAll('interview-btn')" class="interview-btn btn btn-outline btn-success">INTERVIEW</button>
