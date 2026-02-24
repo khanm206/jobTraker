@@ -55,8 +55,8 @@ function selectedJob(id, jobs) {
                 <div class="stat w-fit px-4 py-2 rounded-lg text-lg font-semibold bg-success/20 text-success border border-success">INTERVIEW</div>
                 <p class="description">${job.description}</p>
                 <div class="space-x-2 text-xl">
-                    <button class="interview-btn btn btn-outline btn-success">INTERVIEW</button>
-                    <button class="rejected-btn btn btn-outline btn-error">REJECTED</button>
+                    <button onclick="changeStatusOnAll('interview-btn')"  class="interview-btn btn btn-outline btn-success">INTERVIEW</button>
+                    <button onclick="changeStatusOnAll('rejected-btn')" class="rejected-btn btn btn-outline btn-error">REJECTED</button>
                 </div>
 
    
@@ -109,8 +109,8 @@ function selectedJob(id, jobs) {
                 <div class="stat w-fit px-4 py-2 rounded-lg text-lg font-semiboldt bg-error/20 text-error border border-error ">REJECTED</div>
                 <p class="description">${job.description}</p>
                 <div class="space-x-2 text-xl">
-                    <button class="interview-btn btn btn-outline btn-success">INTERVIEW</button>
-                    <button class="rejected-btn btn btn-outline btn-error">REJECTED</button>
+                    <button onclick="changeStatusOnAll('interview-btn')" class="interview-btn btn btn-outline btn-success">INTERVIEW</button>
+                    <button onclick="changeStatusOnAll('rejected-btn')" class="rejected-btn btn btn-outline btn-error">REJECTED</button>
                 </div>
 
    
@@ -123,5 +123,38 @@ function selectedJob(id, jobs) {
     `;
       totalJobs.appendChild(div);
     }
+  }
+}
+
+function changeStatusOnAll(e) {
+  let status = document.getElementById(`status`);
+  const allJobsDiv = document.getElementById(`allJobsDiv`);
+  if (e === `interview-btn`) {
+    status.innerText = `INTERVIEW`;
+    status.classList.remove(
+      `bg-error/20`,
+      `text-error`,
+      `border`,
+      `border-error`,
+    );
+    status.classList.add(
+      `bg-success/20`,
+      `text-success`,
+      `border`,
+      `border-success`,
+    );
+    allJobsDiv.classList.remove(`border-error`);
+    allJobsDiv.classList.add(`border-l-4`, `border-success`);
+  } else if (e === `rejected-btn`) {
+    status.innerText = `REJECTED`;
+    status.classList.remove(
+      `bg-success/20`,
+      `text-success`,
+      `border`,
+      `border-success`,
+    );
+    status.classList.add(`bg-error/20`, `text-error`, `border`, `border-error`);
+    allJobsDiv.classList.remove(`border-success`);
+    allJobsDiv.classList.add(`border-l-4`, `border-error`);
   }
 }

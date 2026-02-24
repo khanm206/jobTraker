@@ -129,6 +129,7 @@ function allJobs(jobs) {
       "lg:p-8",
       "rounded-2xl",
     );
+    div.id = "allJobsDiv";
     div.innerHTML = `
    <div class="lg:flex justify-between items-start">
   <div class="space-y-6">
@@ -143,7 +144,7 @@ function allJobs(jobs) {
       <i class="fa-solid fa-circle"></i>
       <p class="salary">${job.salary}</p>
     </div>
-    <div class="stat bg-info/20 w-fit px-4 py-2 rounded-lg text-lg font-semibold">${job.status}</div>
+    <div id="status" class="stat bg-info/20 w-fit px-4 py-2 rounded-lg text-lg font-semibold">${job.status}</div>
     <p class="description">${job.description}</p>
     <div class="space-x-2 text-xl">
       <button class="interview-btn btn btn-outline btn-success">INTERVIEW</button>
